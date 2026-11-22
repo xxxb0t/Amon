@@ -2,27 +2,12 @@
 
 <img src="web/public/logo.svg" width="84" alt="ARTEX logo" />
 
-# ARTEX
+# Amon
 
 **Autonomous penetration testing that keeps its receipts.**
 
-(upstream: [Autumn-27/ARTEX](https://github.com/Autumn-27), AGPL-3.0)
 
-Self-hosted multi-agent offensive security. A planner explores, workers run real tools,
-and every finding stays bound to the assets and HTTP traffic that prove it.
-
-[![Release](https://img.shields.io/github/v/release/BaaRai/ARTEX?label=release&color=6b34db)](https://github.com/BaaRai/ARTEX/releases)
-[![License](https://img.shields.io/github/license/BaaRai/ARTEX?color=6b34db)](LICENSE)
-[![CI](https://github.com/BaaRai/ARTEX/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/BaaRai/ARTEX/actions/workflows/ci.yml)
-[![Go](https://img.shields.io/github/go-mod/go-version/BaaRai/ARTEX?color=6b34db)](go.mod)
-
-[Quick start](#quick-start) · [Screenshots](#screenshots) · [How it works](#how-it-works) · [Install](#installation) · [Configuration](#configuration) · [Security](SECURITY.md)
-
-</div>
-
----
-
-ARTEX is a self-hosted, LLM-driven penetration testing platform. It is not a chat wrapper around
+Amon is a self-hosted, LLM-driven penetration testing platform. It is not a chat wrapper around
 a scanner: a planner splits a goal into intents, workers execute them with real tools, and the
 results are written back into **two linked graphs**: one for what you know about the target, one
 for how the test is progressing. Every finding can carry the captured request and response that
@@ -41,26 +26,6 @@ justify it, and every autonomous action passes through scope rules, approval gat
 
 ---
 
-## Quick start
-
-```bash
-git clone https://github.com/BaaRai/ARTEX.git
-cd ARTEX
-cp .env.example .env            # set POSTGRES_PASSWORD (and optionally an LLM key)
-docker compose up -d --build    # builds from this checkout, starts PostgreSQL
-```
-
-Open **http://localhost:8787**. On the first visit `/setup` asks for the one-time setup token
-printed at startup:
-
-```bash
-docker compose logs artex | grep "Setup token"
-```
-
-> There is no prebuilt Docker image to pull: the image is always built from your checkout.
-> For all installation paths (script, binaries, source, release archives), see [Installation](#installation).
-
----
 
 ## Multi-provider workers
 
